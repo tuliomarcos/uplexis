@@ -13,18 +13,11 @@ export const mutations = {
 }
 
 export const actions = {
-	setApp({ commit }) {
+	setApps({ commit }) {
 		return AppService
 			.allApps()
 			.then(resp => {
 				commit('SET_APP', resp.apps)
-			})
-	},
-	log() {
-		AppService
-			.allApps()
-			.then(resp => {
-				console.log(resp.apps)
 			})
 	},
 }
