@@ -2,7 +2,7 @@
   div
     h1 aplicativos
     SharedOrder
-    SharedCard
+    SharedCard(type="apps")
 </template>
 
 <script>
