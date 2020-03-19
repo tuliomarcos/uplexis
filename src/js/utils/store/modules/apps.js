@@ -1,4 +1,5 @@
 import * as AppService from '../../services/AppService'
+import * as appIcons from '../../icons/appIcons'
 
 // export const namespaced = true
 
@@ -17,7 +18,11 @@ export const actions = {
 		return AppService
 			.allApps()
 			.then(resp => {
-				commit('SET_APP', resp.apps)
+				let updateApp = resp.apps.map((app, index) => {
+          app.path = appIcons.icons().map(icon => icon.path)[index]
+          return app
+        })
+				commit('SET_APP', updateApp)
 			})
 	},
 }
