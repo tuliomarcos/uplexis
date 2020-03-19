@@ -1,17 +1,28 @@
 <template lang="pug">
   div
     h1 Fontes
-    SharedCard(type="sources")
+    SharedFilter(@filter="filterSource")
+    SharedCard(type="sources" :filter="filter")
 </template>
 
 <script>
   import SharedCard from '../shared/SharedCard'
-  import SharedOrder from '../shared/SharedOrder'
+  import SharedFilter from '../shared/SharedFilter'
 
   export default {
     components: {
       SharedCard,
-      SharedOrder,
-    }, 
+      SharedFilter,
+    },
+    data() {
+      return {
+        filter: ''
+      }
+    },
+    methods: {
+      filterSource(event) {
+        this.filter = event
+      }
+    },
   }
 </script>

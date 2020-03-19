@@ -1,8 +1,8 @@
 <template lang="pug">
-  div.up-filter
-    label.up-filter_label Ordenar
+  div.up-order
+    label.up-order_label Ordenar
     v-select(
-      class="up-filter_select"
+      class="up-order_select"
       :options="options"
       :value="optionSelected"
       @input="changeValue"
