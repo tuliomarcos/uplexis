@@ -12,13 +12,7 @@
             router-link.linkTabs(:to="link.path") {{ link.name }}
 
     main
-      #slider 
-
-      #cards
-        #filter
-
-        #cards-area
-          slot
+      slot
 
     footer
 
