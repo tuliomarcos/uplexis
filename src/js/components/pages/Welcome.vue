@@ -7,7 +7,6 @@
           li(
             v-for="(link, index) in routes"
             :key="index"
-            v-if="link.path !== '/'"
           )
             router-link.linkTabs(:to="link.path") {{ link.name }}
 

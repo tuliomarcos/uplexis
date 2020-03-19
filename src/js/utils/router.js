@@ -1,6 +1,5 @@
 import Vue from "vue"
 import VueRouter from "vue-router"
-import Welcome from "../components/pages/Welcome.vue"
 import Aplications from "../components/pages/Aplications.vue"
 import Fonts from "../components/pages/Fonts.vue"
 
@@ -10,11 +9,6 @@ Vue.use(VueRouter)
 export const routes = [
   {
     path: "/",
-    name: 'Home',
-    component: Welcome,
-  },
-  {
-    path: "/aplicativos",
     name: 'Aplicativos',
     component: Aplications,
   },
@@ -26,7 +20,7 @@ export const routes = [
 ]
 
 const router = new VueRouter({
-  history: true,
+  mode: 'history',
   routes,
 })
 
