@@ -1,13 +1,18 @@
 import * as SourceService from '../../services/SourceService'
+import * as sourceIcons from '../../icons/sourceIcons'
 
 export const state = {
-  sources: {}
+  sources: {},
+  viewSource: ''
 }
 
 export const mutations = {
   SET_SOURCE(state, source) {
     state.sources = source
-  }
+  },
+  SET_VIEW_SOURCE(state, filter) {
+    state.viewSource = filter
+  },
 }
 
 export const actions = {
@@ -15,7 +20,15 @@ export const actions = {
     return SourceService
       .allSources()
       .then(resp => {
-        commit('SET_SOURCE', resp.sources)
+        let updateSources = resp.sources.map((source, index) => {
+          source.path = sourceIcons.icons().map(icon => icon.path)[index]
+          return source
+        })
+        commit('SET_SOURCE', updateSources)
       })
-  }
+  },
+  filterSource({ commit }, filter) {
+    console.log(filter)
+    commit('SET_VIEW_SOURCE', filter)
+  },
 }
