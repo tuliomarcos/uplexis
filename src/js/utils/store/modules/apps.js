@@ -19,7 +19,7 @@ export const actions = {
 			.allApps()
 			.then(resp => {
 				let updateApp = resp.apps.map((app, index) => {
-          app.path = appIcons.icons().map(icon => icon.path)[index]
+          app.icon = appIcons.icons().map(icon => icon.code)[index]
           return app
         })
 				commit('SET_APP', updateApp)

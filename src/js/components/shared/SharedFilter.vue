@@ -1,14 +1,14 @@
 <template lang="pug">
   .up-filter
     .up-filter_button#all-icon(@click="toFilterCard")
-      img.up-filter--icone
+      font-awesome-icon(icon="globe")
       span.up-filter--text Todos
     .up-filter_button(
       v-for="source in sources.sources" 
       :id="source.id"
       @click="toFilterCard"
     )
-      img.up-filter--icone
+      font-awesome-icon(:icon="source.icon" class="up-icone")
       span.up-filter--text {{ source.name }}
 </template>
 

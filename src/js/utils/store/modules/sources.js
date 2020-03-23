@@ -21,7 +21,7 @@ export const actions = {
       .allSources()
       .then(resp => {
         let updateSources = resp.sources.map((source, index) => {
-          source.path = sourceIcons.icons().map(icon => icon.path)[index]
+          source.icon = sourceIcons.icons().map(icon => icon.code)[index]
           return source
         })
         commit('SET_SOURCE', updateSources)

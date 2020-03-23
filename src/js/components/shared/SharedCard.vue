@@ -6,7 +6,7 @@
       v-if="type === 'apps'"  
     )
       .up-card_icon
-        img(height="100" src="https://pt.seaicons.com/wp-content/uploads/2016/03/crazy-cat-icon.png")
+        font-awesome-icon(:icon="app.icon" class="up-icone")
       .up-card_title
         h1 {{ app.name }}
       .up-card_text
@@ -21,7 +21,7 @@
       v-show="filter === source.name || filter === 'Todos' || filter === ''"  
     )
       .up-card_icon
-        img(height="150" src="https://images.vexels.com/media/users/3/184114/isolated/lists/8bddbe02b82396276485e9250dfcc80c-ilustracao-de-mordida-de-sapatilha-de-cachorro-bravo.png")
+        font-awesome-icon(:icon="source.icon" class="up-icone")
       .up-card_title
         h1 {{ source.name }}
       .up-card_text
@@ -30,7 +30,7 @@
 
 <script>
   import { mapActions, mapState } from 'vuex'
-
+  
   export default {
     props: {
       type: String,
