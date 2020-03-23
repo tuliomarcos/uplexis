@@ -5,11 +5,15 @@ import * as appIcons from '../../icons/appIcons'
 
 export const state = {
 	apps: {},
+	infoPage: {},
 }
 
 export const mutations = {
 	SET_APP(state, app) {
 		state.apps = app
+	},
+	SET_INFO_PAGE(state, data) {
+		state.infoPage = data
 	},
 }
 
@@ -25,6 +29,12 @@ export const actions = {
 				commit('SET_APP', updateApp)
 			})
 	},
+	callCardKnowMore({ dispatch }, data) {
+		dispatch('cardKnowMore', data)
+	},
+	cardKnowMore({ commit }, data) {
+		commit('SET_INFO_PAGE', data)
+	}
 }
 
 export const getters = {

@@ -13,7 +13,8 @@
         p {{ app.description }}
       .up-card_footer
         span R$ {{ app.price }}
-        a Saiba Mais
+        span(@click="saibaMais(app)") 
+          router-link(to="/saiba-mais") Saiba Mais
     .up-card(
       :id="source.id"
       v-for="source in sources.sources"
@@ -40,7 +41,10 @@
       ...mapState(['apps', 'sources']),
     },
     methods: {
-      ...mapActions(['setApps','setSources']),
+      ...mapActions(['setApps','setSources', 'callCardKnowMore']),
+      saibaMais(app) {
+        this.$store.dispatch('callCardKnowMore', app)
+      },
     },
     created() {
       this.type === 'apps'

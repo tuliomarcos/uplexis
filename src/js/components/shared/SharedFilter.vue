@@ -23,6 +23,8 @@
       ...mapActions(['filterSource']),
       toFilterCard(event) {
         //this.filterSource(event.target.innerText)
+        console.log(event.target.id)
+        console.log(event)
         this.$emit('filter', event.target.innerText)
       },
     },

@@ -1,17 +1,18 @@
 <template lang="pug">
   #app
-    Welcome
-      template
-        router-view
+    SharedHeader
+    main
+      router-view
+    footer
 </template>
 
 <script>
-  import Welcome from './js/components/pages/Welcome.vue'
+  import SharedHeader from './js/components/shared/SharedHeader.vue'
 
   export default {
     name: 'App',
     components: {
-      Welcome,
+      SharedHeader,
     }
   }
 </script>
