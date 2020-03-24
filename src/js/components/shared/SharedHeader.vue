@@ -1,8 +1,8 @@
 <template lang="pug">
-  header
-    router-link(to="/")
+  header.up-header
+    router-link.up-header_logo(to="/")
       img#logo(src="../../../assets/logo.png", width="150")
-    nav
+    nav.up-header_navbar
       ul
         li(
           v-for="(link, index) in routes"

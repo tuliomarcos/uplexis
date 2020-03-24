@@ -1,0 +1,37 @@
+/* Position mixins */
+@mixin flexLayout($display, $justify: false, $align: false, $direction: false, $wrap: false) {
+  display: $display;
+  @if $justify {
+    justify-content: $justify;
+  }
+  @if $align {
+    align-items: $align;
+  }
+  @if $direction {
+    flex-direction: $direction;
+  }
+  @if $wrap {
+    flex-wrap: $wrap;
+  }
+}
+
+@mixin flex($justify: false, $align: false, $direction: false, $wrap: false) {
+  @include flexLayout(flex, $justify, $align, $direction, $wrap);
+}
+
+@mixin inlineFlex($justify: false, $align: false, $direction: false, $wrap: false) {
+  @include flexLayout(inline-flex, $justify, $align, $direction, $wrap);
+}
+
+/* Button Mixins */
+@mixin btnSizes() {
+  &--small {
+      font-size: $fontSmall;
+      padding: $btnPaddingSmall;
+  }
+
+  &--big {
+      font-size: $fontBig;
+      padding: $btnPaddingBig;
+  }
+}

@@ -1,0 +1,60 @@
+#cards-area {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-row-gap: 50px;
+}
+
+.up-card {
+  width: 305px;
+  min-height: 265px;
+  max-height: 330px;
+  background-color: $white;
+  box-shadow: 0 3px 18px rgba(0, 0, 0, 0.06);
+  border-radius: 5px;
+  justify-self: center;
+
+  &_icon {
+    color: $orange;
+    display: flex;
+    justify-content: center;
+    padding: 40px 25px 20px;
+  }
+
+  &_title {
+    padding: 5px 25px;
+
+    h1 {
+      font-size: 20px;
+      text-align: center;
+    }
+  }
+
+  &_text {
+    padding: 20px 25px 40px;
+    font-size: $font;
+    text-align: center;
+  }
+
+  &_footer {
+    background: $gradient;
+    padding: 20px 25px;
+    color: $white;
+    display: flex;
+    justify-content: space-between;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+
+    &--price {
+      font-size: 22px;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    &--know-more {
+      font-size: 18px;
+      font-weight: 700;
+      color: $white;
+      text-decoration: none;
+    }
+  }
+}

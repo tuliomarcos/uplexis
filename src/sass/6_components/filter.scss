@@ -1,0 +1,32 @@
+.up-filter {
+  display: grid;
+  grid-gap: 0px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  margin-bottom: 40px;
+  
+  &_button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 75px;
+    padding: 15px 10px;
+    font-size: $font;
+    background-color: #f9f9f9;
+    border: 1px solid #ececec;
+    border-radius: 5px;
+    cursor: pointer;
+    color: $black;
+
+    &--text {
+      font-size: $fontSmall;
+    }
+
+    &:hover {
+      background-color: $orange;
+      border: transparent;
+      color: $white;
+      box-shadow: 0 0 9px 1px rgba(168, 162, 154, 0.69);
+    }
+  }
+}

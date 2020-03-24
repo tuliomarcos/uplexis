@@ -1,5 +1,5 @@
 <template lang="pug">
-  div.up-order
+  .up-order
     label.up-order_label Ordenar
     v-select(
       class="up-order_select"

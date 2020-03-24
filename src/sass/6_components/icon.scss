@@ -1,0 +1,11 @@
+.up-icon {
+  font-size: $fontIcon;
+
+  &--small {
+    font-size: $fontIconSmall;
+  }
+
+  &--big {
+    font-size: $fontIconBig;
+  }
+}

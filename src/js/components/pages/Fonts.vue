@@ -1,6 +1,5 @@
 <template lang="pug">
   div
-    h1 Fontes
     SharedFilter(@filter="filterSource")
     SharedCard(type="sources" :filter="filter")
 </template>

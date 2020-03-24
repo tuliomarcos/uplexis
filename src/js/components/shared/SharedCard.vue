@@ -6,15 +6,15 @@
       v-if="type === 'apps'"  
     )
       .up-card_icon
-        font-awesome-icon(:icon="app.icon" class="up-icone")
+        font-awesome-icon(:icon="app.icon" class="up-icon--big")
       .up-card_title
         h1 {{ app.name }}
       .up-card_text
         p {{ app.description }}
       .up-card_footer
-        span R$ {{ app.price }}
+        span.up-card_footer--price R$ {{ app.price }}
         span(@click="saibaMais(app)") 
-          router-link(to="/saiba-mais") Saiba Mais
+          router-link.up-card_footer--know-more(to="/saiba-mais") Saiba Mais
     .up-card(
       :id="source.id"
       v-for="source in sources.sources"
@@ -22,7 +22,7 @@
       v-show="filter === source.name || filter === 'Todos' || filter === ''"  
     )
       .up-card_icon
-        font-awesome-icon(:icon="source.icon" class="up-icone")
+        font-awesome-icon(:icon="source.icon" class="up-icon--big")
       .up-card_title
         h1 {{ source.name }}
       .up-card_text
@@ -55,21 +55,4 @@
 </script>
 
 <style lang="scss">
-  .up-card {
-    max-width : 380px;
-    padding: 20px;
-    display: inline-block;
-    border: solid 1px #000;
-    border-radius: 5px;
-    margin: 15px;
-
-    &_icon {
-      display: flex;
-      justify-content: center;
-    }
-
-    &_title {
-      text-align: center;
-    }
-  }
 </style>

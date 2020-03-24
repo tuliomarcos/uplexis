@@ -9,16 +9,19 @@ Vue.use(VueRouter)
 
 export const routes = [
   {
+    id: 0,
     path: "/",
     name: 'Aplicativos',
     component: Aplications,
   },
   {
+    id: 1,
     path: "/fontes",
     name: 'Fontes',
     component: Fonts,
   },
   {
+    id: 2,
     path: "/saiba-mais",
     name: 'SaibaMais',
     component: KnowMore,

@@ -1,0 +1,31 @@
+.up-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $white;
+  padding: 15px 30px;
+
+  &_navbar ul {
+    display: flex;
+    list-style: none;
+
+    li {
+      a {
+        font-size: $fontBig;
+        font-weight: 700;
+        text-decoration: none;
+        color: $black;
+        
+        &:hover,
+        &.router-link-exact-active {
+          color: $orange;
+          transition: $transition;
+        }
+      }
+
+      &:not(:last-child){
+        margin-right: 15px;
+      }
+    }
+  }
+}
