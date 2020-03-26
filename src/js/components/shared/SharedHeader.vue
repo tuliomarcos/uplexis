@@ -1,7 +1,7 @@
 <template lang="pug">
   header.up-header
     router-link.up-header_logo(to="/")
-      img#logo(src="../../../assets/logo.png", width="150")
+      img.up-logo(src="../../../assets/logo.png", width="150")
     nav.up-header_navbar
       ul
         li(

@@ -1,10 +1,10 @@
 <template lang="pug">
-  .up-filter
-    .up-filter_button#all-icon(@click="toFilterCard")
+  ul.up-filter
+    li.up-filter_button#all-icon(@click="toFilterCard")
       font-awesome-icon(icon="globe" class="up-icon")
       span.up-filter--text Todos
-    .up-filter_button(
-      v-for="source in sources.sources" 
+    li.up-filter_button(
+      v-for="source in sources" 
       :id="source.id"
       @click="toFilterCard"
     )
@@ -13,14 +13,11 @@
 </template>
 
 <script>
-  import { mapState, mapActions } from 'vuex'
-  
   export default {
-    computed: {
-      ...mapState(['sources'])
+    props: {
+      sources: [Array, Object]
     },
     methods: {
-      ...mapActions(['filterSource']),
       toFilterCard(event) {
         this.$emit('filter', event.target.innerText)
       },

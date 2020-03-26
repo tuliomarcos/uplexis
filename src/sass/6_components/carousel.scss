@@ -1,0 +1,18 @@
+.up-carousel {
+
+}
+
+.owl-item {
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+
+  &:nth-child(odd) {
+    background: url(../assets/image1.png);
+  }
+
+  &:nth-child(even) {
+    background: url(../assets/image2.png);
+  }
+}
+

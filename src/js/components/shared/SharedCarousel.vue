@@ -1,18 +1,28 @@
 <template lang="pug">
-  .up-banner
-    img.up-banner--logo(src="../../../assets/logo.png")
-    span | 
-    .up-banner--title 
-
-    p.up-banner--description
-    .up-banner--price 
-      span R$
-      span
-      .up-button--primary Saiba mais
+  .up-carousel
+    .up-carousel_header
+      img.up-logo(src="../../../assets/logo.png", width="150")
+      span |
+      .up-carousel_header--title {{ item.name }}
+    .up-carousel_body
+      p.up-carousel_body--description {{ item.description }} 
+    .up-carousel_footer
+      span.up-carousel_footer--price R$
+      span.up-carousel_footer--value {{ item.price }}
+      span(@mouseover="datasKnowMore(item)")
+        router-link.up-carousel_footer--know-more(to="/saiba-mais") Saiba Mais
 </template>
 
 <script>
+
   export default {
-    
+    props: {
+      data: [Array, Object]
+    },
+    methods: {
+      datasKnowMore(data) {
+        this.$emit('datasKnowMore', data)
+      },
+    },
   }
 </script>
