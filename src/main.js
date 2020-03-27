@@ -4,7 +4,6 @@ import router from './js/utils/router'
 import store from './js/utils/store/store'
 import './sass/app.scss';
 import fontawesome from '@fortawesome/fontawesome';
-import carousel from 'vue-owl-carousel'
 import VueCarousel from 'vue-carousel'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { 
@@ -22,7 +21,6 @@ fontawesome.library.add(faCoins, faMoneyBillAlt, faShareAlt, faCheckSquare,
   faGavel, faBan, faGlobeAmericas, faGem, faMale, faPiggyBank, faChevronLeft)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
-Vue.component('carousel', carousel)
 
 Vue.use(VueCarousel)
 

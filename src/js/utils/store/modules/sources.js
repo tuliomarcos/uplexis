@@ -3,15 +3,11 @@ import * as sourceIcons from '../../icons/sourceIcons'
 
 export const state = {
   sources: {},
-  viewSource: ''
 }
 
 export const mutations = {
   SET_SOURCE(state, source) {
     state.sources = source
-  },
-  SET_VIEW_SOURCE(state, filter) {
-    state.viewSource = filter
   },
 }
 
@@ -26,9 +22,5 @@ export const actions = {
         })
         commit('SET_SOURCE', updateSources)
       })
-  },
-  filterSource({ commit }, filter) {
-    console.log(filter)
-    commit('SET_VIEW_SOURCE', filter)
   },
 }

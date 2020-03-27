@@ -16,8 +16,7 @@
         .up-carousel_footer
           span.up-carousel_footer--price R$
           span.up-carousel_footer--value {{ item.price }}
-          span(@mouseover="datasKnowMore(item)")
-            router-link.up-btn.up-btn--primary(to="/saiba-mais") Saiba Mais
+          button.up-btn.up-btn--primary(@mouseover="datasKnowMore(item)") Saiba Mais
 </template>
 
 <script>
@@ -28,6 +27,7 @@
     methods: {
       datasKnowMore(data) {
         this.$emit('datasKnowMore', data)
+        this.$router.push('/saiba-mais')
       },
     },
   }

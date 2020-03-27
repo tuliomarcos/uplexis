@@ -8,8 +8,7 @@
       p {{ data.description }}
     .up-card_footer(v-if="type === 'apps'")
       span.up-card_footer--price R$ {{ data.price }}
-      span(@mouseover="datasKnowMore(data)")
-        router-link.up-card_footer--know-more(to="/saiba-mais") Saiba Mais
+      button.up-card_footer--know-more(@click="datasKnowMore(data)") Saiba Mais
 </template>
 
 <script>
@@ -22,6 +21,7 @@
     methods: {
       datasKnowMore(data) {
         this.$emit('datasKnowMore', data)
+        this.$router.push('/saiba-mais')
       },
     }
   }
