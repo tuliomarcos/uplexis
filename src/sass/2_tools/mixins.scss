@@ -27,11 +27,11 @@
 @mixin btnSizes() {
   &--small {
       font-size: $fontSmall;
-      padding: $btnPaddingSmall;
+      padding: 6px 22px;
   }
 
   &--big {
       font-size: $fontBig;
-      padding: $btnPaddingBig;
+      padding: 12px 38px;
   }
 }

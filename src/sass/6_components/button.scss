@@ -1,0 +1,27 @@
+.up-btn {
+  @include btnSizes();
+  padding: 9px 30px;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: $transition;
+  
+  &--primary {
+    background: $gradientOrangeEffect;
+    color: $white;
+    background-size: 200% auto;
+    &:hover {
+      background-position: right center;
+      transition: $transition;
+    }
+  }
+  &--secondary {
+    background-color: $yellow;
+    color: $white;
+
+    &:hover {
+      background-color: $orange;
+      transition: $transition;
+    }
+  }
+}

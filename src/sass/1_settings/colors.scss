@@ -1,4 +1,12 @@
 $orange: #f26f14;
+$yellow: #f48c23;
 $white: #fff;
 $black: #444;
 $gradient: linear-gradient(39deg, #ff8e49 0%, $orange 100%);
+$gradientOrangeEffect: linear-gradient(
+  to right,
+  #FF8E49 0%,
+  #FD6000 40%,
+  #FD6000 60%,
+  #FF8E49 100%
+);

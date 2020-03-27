@@ -1,19 +1,5 @@
 <template lang="pug">
   div
-    carousel(
-      :items="1"
-      :autoplay="true"
-      :nav="false" 
-      :dots="false" 
-      :loop="true"
-    )
-      SharedCarousel(
-        v-for="(app, key) in apps.apps"
-        :key="key"
-        :data="app"
-        @datasKnowMore="knowMore"
-      )
-
     SharedSelect(
       @input="orderCards"
       :options="options"
@@ -31,14 +17,12 @@
 <script>
   import SharedCard from '../shared/SharedCard'
   import SharedSelect from '../shared/SharedSelect'
-  import SharedCarousel from '../shared/SharedCarousel.vue'
   import { mapActions, mapState } from 'vuex'
 
   export default {
     components: {
       SharedCard,
       SharedSelect,
-      SharedCarousel,
     },
     data() {
       return {
@@ -56,9 +40,6 @@
       ...mapActions(['setApps', 'callCardKnowMore']),
       knowMore(app) {
         this.$store.dispatch('callCardKnowMore', app)
-      },
-      lero(value) {
-        console.log(value)
       },
       orderCards(value) {
         console.log(value)

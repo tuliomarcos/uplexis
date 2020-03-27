@@ -4,6 +4,15 @@
   align-items: center;
   background-color: $white;
   padding: 15px 30px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  box-shadow: 0 0 12px;
+
+  + * {
+    margin-top: 75px;
+  }
 
   &_navbar ul {
     display: flex;
