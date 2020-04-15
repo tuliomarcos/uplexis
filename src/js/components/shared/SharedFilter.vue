@@ -1,8 +1,8 @@
 <template lang="pug">
   ul.up-filter
     li.up-filter_button#all-icon(@click="toFilterCard")
-      font-awesome-icon(icon="globe" class="up-icon" :id="source.id")
-      span.up-filter--text(:id="source.id") Todos
+      font-awesome-icon(icon="globe" class="up-icon")
+      span.up-filter--text Todos
     li.up-filter_button(
       v-for="source in sources" 
       :id="source.id"

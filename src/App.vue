@@ -24,7 +24,8 @@
     methods: {
       ...mapActions(['setApps']),
       knowMore(app) {
-        this.$store.dispatch('callCardKnowMore', app)
+        this.$store.dispatch('cardKnowMore', app)
+        this.$router.push('/saiba-mais')
       },
     },
     mounted() {

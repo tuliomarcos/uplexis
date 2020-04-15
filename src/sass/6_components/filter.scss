@@ -29,4 +29,11 @@
       box-shadow: 0 0 9px 1px rgba(168, 162, 154, 0.69);
     }
   }
+
+  &--active {
+    background-color: $orange;
+    border: transparent;
+    color: $white;
+    box-shadow: 0 0 9px 1px rgba(168, 162, 154, 0.69);
+  }
 }

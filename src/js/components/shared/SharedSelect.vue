@@ -4,7 +4,7 @@
     v-select(
       class="up-select_options"
       :options="options"
-      :value="optionSelected"
+      :value="optionSelected || itemText"
       @input="changeValue"
     )
 </template>
@@ -13,18 +13,14 @@
   import vSelect from 'vue-select'
 
   export default {
-    data() {
-      return {
-        optionSelected: 'Todos',
-      }
-    },
     props: {
       options: Array,
+      itemText: String,
+      optionSelected: String,
     },
     methods: {
       changeValue(event) {
-        this.optionSelected = event
-        this.$emit('input', this.optionSelected)
+        this.$emit('input', event)
       }
     },
     components: {

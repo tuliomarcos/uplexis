@@ -3,6 +3,8 @@
     SharedSelect(
       @input="orderCards"
       :options="options"
+      itemText="Todos"
+      :optionSelected="optionSelected"
     )
     #cards-area
       SharedCard(
@@ -31,27 +33,30 @@
           'Lançamento',
           'Preço'
         ],
+        optionSelected: '',
       }
     },
     computed: {
       ...mapState(['apps', 'sources']),
     },
     methods: {
-      ...mapActions(['setApps', 'callCardKnowMore']),
+      ...mapActions(['setApps', 'cardKnowMore']),
       knowMore(app) {
-        this.$store.dispatch('callCardKnowMore', app)
+        this.$store.dispatch('cardKnowMore', app)
+        this.$router.push('/saiba-mais')
       },
       orderCards(value) {
-        console.log(value)
-        if(value === 'Todos') {
-          this.apps.apps.sort((a, b) => a.id - b.id)
+        if(value !== null) {
+          if(value === 'Todos') this.apps.apps.sort((a, b) => a.id - b.id)
+          if(value === 'Preço') this.apps.apps.sort((a, b) => a.price - b.price)
+          if(value === 'Lançamento') this.apps.apps.sort((a, b) => b.date - a.date )
+
+          this.optionSelected = value
+          return
         }
-        if(value === 'Lançamento') {
-          this.apps.apps.sort((a, b) => b.date - a.date )
-        }
-        if(value === 'Preço') {
-          this.apps.apps.sort((a, b) => a.price - b.price)
-        }
+
+        this.apps.apps.sort((a, b) => a.id - b.id)
+        this.optionSelected = 'Todos'
       }
     },
     created() {

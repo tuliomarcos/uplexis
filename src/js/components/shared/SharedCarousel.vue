@@ -26,7 +26,6 @@
     methods: {
       datasKnowMore(data) {
         this.$emit('datasKnowMore', data)
-        this.$router.push('/saiba-mais')
       },
     },
   }

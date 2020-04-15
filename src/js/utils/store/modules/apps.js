@@ -29,9 +29,6 @@ export const actions = {
 				commit('SET_APP', updateApp)
 			})
 	},
-	callCardKnowMore({ dispatch }, data) {
-		dispatch('cardKnowMore', data)
-	},
 	cardKnowMore({ commit }, data) {
 		commit('SET_INFO_PAGE', data)
 	}
